@@ -1,0 +1,26 @@
+{
+  "name": "react-amp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "codegen": "node ./codegen/generateAmpComponents.js",
+    "clear-codegen": "rm ./src/AMP.ts",
+    "clear": "rm -rf ./lib",
+    "build": "npm run codegen && npm run clear && tsc",
+    "prepare": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "amphtml-validator-rules": "^1.1.0",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "ts-simple-ast": "^18.0.1"
+  }
+}
