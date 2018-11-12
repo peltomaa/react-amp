@@ -70,15 +70,19 @@ filteredTags.forEach(tag => {
         returnType: 'any'
     });
     
-    // Create component
-    file.addClass({
-        name: componentName,
-        extends: `React.Component<${interfaceDeclaration.getName()}, void>`,
-        methods: [{
-            name: 'render',
-            bodyText: `return React.createElement('${tag.tagName.toLowerCase()}', this.props, this.props.children);`
-        }],
-        isExported: true
+    // Create React Component
+    file.addVariableStatement({
+        declarationKind: VariableDeclarationKind.Const,
+        declarations: [{
+            name: componentName,
+            type: `React.FunctionComponent<${interfaceDeclaration.getName()}>`,
+            initializer: `(props) => React.createElement('${tag.tagName.toLowerCase()}', props, props.children)`,
+            isExported: true
+        }]
+    });
+
+    file.addExportDeclaration({
+        namedExports: [componentName]
     });
 });
 

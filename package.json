@@ -1,8 +1,8 @@
 {
   "name": "react-amp",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "codegen": "node ./codegen/generateAmpComponents.js",
     "clear-codegen": "rm ./src/AMP.ts",
@@ -10,8 +10,11 @@
     "build": "npm run codegen && npm run clear && tsc",
     "prepare": "npm run build"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peltomaa/react-amp.git"
+  },
+  "author": "Touko Peltomaa",
   "devDependencies": {
     "@types/react": "*",
     "@types/react-dom": "*",
