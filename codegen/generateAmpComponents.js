@@ -1,4 +1,4 @@
-const { Project } = require('ts-simple-ast');
+const { Project, VariableDeclarationKind } = require('ts-simple-ast');
 const amphtmlValidatorRules = require('amphtml-validator-rules');
 
 const name = require('./tagNameToComponentName');
