@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "codegen": "node ./codegen/generateAmpComponents.js",
     "clear-codegen": "rm ./src/AMP.ts",
